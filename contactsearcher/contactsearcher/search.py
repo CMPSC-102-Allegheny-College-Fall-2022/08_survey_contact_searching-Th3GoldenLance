@@ -23,7 +23,7 @@ def search_for_email_given_job(job_description: str, contacts: str) -> List[List
     ):
         current_contact_job = line[1].replace('"',"") #set the variable job equal to the contents at the index 1 of line
         #if the job to be searched for is in the job variable above, append the contacts list with the line containing the emails and job descriptions
-        #also, remove the inverted commas using the replace() function
+        #also, remove the double quotes sing the replace() function
         if job_description in current_contact_job:
             contact_list.append(line)
 

@@ -13,7 +13,7 @@ cli = typer.Typer()
 
 
 @cli.command()
-def contactsearcher(
+def contactsearcher (
     job_description: str = typer.Option(..., prompt=True),
     contacts_file: [Path] = typer.Option(None),
 ) -> None:

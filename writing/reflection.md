@@ -1,18 +1,11 @@
 # Contact Searching
 
-TODO: Make sure that you delete all of the TODO markers and the written prompts
-from this document. You should also ensure that the document does not have any
-mistakes in spelling, grammar, or the syntax of Markdown. Ultimately, the final
-version of your reflection should be a polished document that is suitable for
-publication on your web site.
-
 ## Nahayan Hussain Minhas
 
 ## Program Output
 
 ### What is the output from running the following commands?
 
-TODO: Use a fenced code block to provide the output for this command.
 
 - `poetry run contactsearcher --job-description "engineer" --contacts-file input/contacts.txt`
 
@@ -37,12 +30,28 @@ The contacts file contains 100 people in it! Let's get searching!
 Wow, we found some contacts! Email them to learn about your job!
 ```
 
-TODO: Use a fenced code block to provide the output for this command.
 
 - `poetry run contactsearcher --job-description "neer" --contacts-file input/contacts.txt`
 
 ```
+The contacts file contains 100 people in it! Let's get searching!
 
+  We are looking for contacts who have a job related to "neer":
+
+  joe70@yahoo.com is a Network engineer
+  torresjames@white.info is a Electrical engineer
+  grahamjoel@castillo-gilbert.net is a Engineer, technical sales
+  gsutton@miller.com is a Engineer, maintenance
+  gharris@villarreal-snow.com is a Water engineer
+  williamsondavid@lopez.com is a Automotive engineer
+  ronald83@yahoo.com is a Maintenance engineer
+  zmarshall@yahoo.com is a Control and instrumentation engineer
+  christopher35@yahoo.com is a Civil engineer, consulting
+  jacquelinedavid@hotmail.com is a Engineer, electronics
+  espinozadaryl@hill-maddox.com is a Engineering geologist
+  edwardsjacob@gmail.com is a Chemical engineer
+
+Wow, we found some contacts! Email them to learn about your job!
 ```
 
 ## Source Code and Configuration Files
@@ -51,42 +60,56 @@ TODO: Use a fenced code block to provide the output for this command.
 
 #### The source code statement that makes the `search` module available to `main`
 
-TODO: Use a fenced code block to provide the requested source code
-TODO: Write at least one paragraph to explain the request source code
+```
+from contactsearcher import search
+```
+This statement is used to import the `search.py` module from the `contactsearcher` directory to be made available for use
+in `main.py`. 
 
 #### The source code statement that extracts the current job description for a contact
 
-TODO: Use a fenced code block to provide the requested source code
-TODO: Write at least one paragraph to explain the request source code
+`current_contact_job = line[1].replace('"',"")`
+
+The variable `current_contact_job` stores the current job description for a contact, by taking the list holding contact at index 0
+and job desc. at index 1, for a line and equating the value at index 1 to `current_contact_job`. The `replace()` function is also used
+to basically remove the double quotes in the txt file.
 
 #### Invocation of the function called `search_for_email_given_job`
 
-TODO: Use a fenced code block to provide the requested source code
-TODO: Write at least one paragraph to explain the request source code
+```
+search_for_email = search.search_for_email_given_job(job_description, contacts_text)
+```
+This source code sets the variable `search_for_email` equal to result returned by the `search_for_email_given_job` function inside the imported
+`search` module. The function takes a job description keyword, and the text of the file holding all the data to be evaluated, as inputs
+and outputs a list where each element is a list.
 
 #### Test case for the function called `search_for_email_given_job`
 
-TODO: Use a fenced code block to provide the requested source code
-TODO: Write at least one paragraph to explain the request source code
+
 
 #### Execute trace of the `contactsearcher` program
 
-TODO: Explain each function call that takes place for the following run of the program
-TODO: Write at least one paragraph to explain every function call when running `contactsearcher`
-
-TODO: Your discussion should start with the invocation of the `contactsearcher`
-function in the `main` module, explain all of the subsequent function calls in
-the correct order, and then show how the program's control returns to the
-`contactsearcher` function in the `main` module.
-
 - `poetry run contactsearcher --job-description "engineer" --contacts-file input/contacts.txt`
+
+The program sets up the `contactsearcher` function with the string input `job_description` and path input `contacts_file`.
+Then, with `typer.Abort()`, it ends the typer interface that's running if the file was not specified. Then, it uses the
+`is_file()` and `exists()` function to check whether the specified file is valid or not. If so, `contacts_text` is set equal to the string
+obtained from reading the file using `read_text()`. Then, the file's line count is checked using the `splitlines()` function to
+split `contacts_text` into lines so the count of lines can be displayed. Then, the `search_for_email_given_job` function is called from the
+imported `search` module using the inputs `job_description` and `contacts_text`. Inside the said function, a list is made from each line in `contacts_text`
+using the `splitlines()` and `csv.reader()` functions. Then, for each of these lines' list, the element at index 1 is stored in `current_contact_job` with 
+the double quotes removed, when occurring, using the `replace()` function. Then, if the entered `job_description` is found as a part of `current_contact_job`
+for that specific line, that line/list is added to `contact_list` with the `append()` function for lists. Finally, the function returns `contact_list`, a list of lists,
+which is stored inside the `search_for_email` variable in `main.py`. Finally, the relevant results are displayed.
 
 ## Professional Assessment
 
 ### So far this semester, what is one area in which you have struggled? How did you overcome this challenge?
 
-TODO: Provide a one-paragraph response that answers this question in your own words.
+I have really struggled in focusing on my assignments and turning them in on time. Unfortunately, due to circumstances out of my control, personal problems
+arose and I fell behind and I could not overcome my lack of focus until now, a very late point in the semester. However, I hope that with my code, I've shown that I do have the potential to be
+an academically good and responsible student.
 
 ### Based on your experiences with this project, what is one way in which you want to improve?
 
-TODO: Provide a one-paragraph response that answers this question in your own words.
+I want to improve my understanding of Poetry and the use of toml,lock files etc.
