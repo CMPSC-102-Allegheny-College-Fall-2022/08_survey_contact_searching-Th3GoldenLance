@@ -188,7 +188,7 @@ version = "1.0.1"
 description = "Object-oriented filesystem paths"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = "*"
 
 [[package]]
 name = "pathspec"
