@@ -11,7 +11,7 @@ contactsearcher = "contactsearcher.main:cli"
 python = "^3.8"
 typer = {extras = ["all"], version = "^0.3.2"}
 rich = "^10.9.0"
-pathlib = "^1.0.1"
+pathlib = "=1.0.1"
 
 [tool.poetry.dev-dependencies]
 black = "^21.8b0"
