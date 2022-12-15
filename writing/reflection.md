@@ -6,7 +6,7 @@ mistakes in spelling, grammar, or the syntax of Markdown. Ultimately, the final
 version of your reflection should be a polished document that is suitable for
 publication on your web site.
 
-## Add Your Name Here
+## Nahayan Hussain Minhas
 
 ## Program Output
 
@@ -16,9 +16,34 @@ TODO: Use a fenced code block to provide the output for this command.
 
 - `poetry run contactsearcher --job-description "engineer" --contacts-file input/contacts.txt`
 
+```
+The contacts file contains 100 people in it! Let's get searching!
+
+  We are looking for contacts who have a job related to "engineer":
+
+  joe70@yahoo.com is a Network engineer
+  torresjames@white.info is a Electrical engineer
+  grahamjoel@castillo-gilbert.net is a Engineer, technical sales
+  gsutton@miller.com is a Engineer, maintenance
+  gharris@villarreal-snow.com is a Water engineer
+  williamsondavid@lopez.com is a Automotive engineer
+  ronald83@yahoo.com is a Maintenance engineer
+  zmarshall@yahoo.com is a Control and instrumentation engineer
+  christopher35@yahoo.com is a Civil engineer, consulting
+  jacquelinedavid@hotmail.com is a Engineer, electronics
+  espinozadaryl@hill-maddox.com is a Engineering geologist
+  edwardsjacob@gmail.com is a Chemical engineer
+
+Wow, we found some contacts! Email them to learn about your job!
+```
+
 TODO: Use a fenced code block to provide the output for this command.
 
 - `poetry run contactsearcher --job-description "neer" --contacts-file input/contacts.txt`
+
+```
+
+```
 
 ## Source Code and Configuration Files
 
